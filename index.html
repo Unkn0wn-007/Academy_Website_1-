@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDO-US CHESS ACADEMY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark Blue-Gray Background */
+        }
+        .font-serif {
+            font-family: 'Merriweather', serif;
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 4px;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #F9FAFB; /* White accent */
+            transition: width 0.3s ease;
+        }
+        .nav-link.active::after,
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .page-section {
+            display: none;
+        }
+        .page-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .section-title {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem; /* 12px */
+        }
+    </style>
+</head>
+<body class="text-[#F9FAFB]">
+
+    <div class="min-h-screen flex flex-col">
+        <!-- Header & Navigation -->
+        <header class="bg-[#1F2937] shadow-lg sticky top-0 z-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <!-- Logo -->
+                    <a href="#home" class="flex items-center space-x-3 nav-trigger">
+                        <!-- Chess Knight Logo -->
+                        <svg class="h-8 w-8 text-[#F9FAFB]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15.5002 9.5C15.5002 8.4 14.7002 7.5 13.5002 7.5H12.0002C11.2002 7.5 10.5002 6.8 10.5002 6C10.5002 5.2 11.2002 4.5 12.0002 4.5C13.2002 4.5 14.0002 4.1 14.5002 3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8.5 12H15.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8.5 16H15.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 7.5V19.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="text-xl font-semibold font-serif tracking-wide">INDO-US CHESS ACADEMY</span>
+                    </a>
+                    <!-- Desktop Navigation -->
+                    <nav class="hidden md:flex flex-grow justify-center space-x-8">
+                        <a href="#home" class="nav-link active nav-trigger">Home</a>
+                        <a href="#gallery" class="nav-link nav-trigger">Gallery</a>
+                        <a href="#achievements" class="nav-link nav-trigger">Achievements</a>
+                        <a href="#lecturers" class="nav-link nav-trigger">Lecturers</a>
+                        <a href="#guests" class="nav-link nav-trigger">Guest Lecturers</a>
+                        <a href="#camps" class="nav-link nav-trigger">Camps</a>
+                        <a href="#contact" class="nav-link nav-trigger">Contact</a>
+                    </nav>
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" class="text-[#F0D9B5] focus:outline-none">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-[#111827]">
+                <a href="#home" class="block py-3 px-4 text-sm nav-trigger">Home</a>
+                <a href="#gallery" class="block py-3 px-4 text-sm nav-trigger">Gallery</a>
+                <a href="#achievements" class="block py-3 px-4 text-sm nav-trigger">Achievements</a>
+                <a href="#lecturers" class="block py-3 px-4 text-sm nav-trigger">Lecturers</a>
+                <a href="#guests" class="block py-3 px-4 text-sm nav-trigger">Guest Lecturers</a>
+                <a href="#camps" class="block py-3 px-4 text-sm nav-trigger">Camps</a>
+                <a href="#contact" class="block py-3 px-4 text-sm nav-trigger">Contact</a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto p-4 sm:p-6 lg:p-8">
+            <!-- Home Section -->
+            <section id="home" class="page-section active">
+                <div class="text-center bg-[#1F2937] rounded-lg py-20 px-4">
+                    <h1 class="text-5xl md:text-6xl font-extrabold font-serif text-white tracking-tight mb-4">Welcome to INDO-US CHESS ACADEMY</h1>
+                    <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">Training Future Champions</p>
+                    <a href="#camps" class="nav-trigger inline-block bg-gray-900 text-white font-bold py-3 px-10 rounded-lg text-lg hover:bg-black transition-colors">Join Us</a>
+                </div>
+            </section>
+
+            <!-- Gallery Section -->
+            <section id="gallery" class="page-section">
+                 <h2 class="text-4xl font-bold text-center font-serif mb-12 section-title mx-auto">
+                    <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5"><path d="M12 21.5C17.2467 21.5 21.5 17.2467 21.5 12C21.5 6.75329 17.2467 2.5 12 2.5C6.75329 2.5 2.5 6.75329 2.5 12C2.5 17.2467 6.75329 21.5 12 21.5Z" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 15.5L10.5 12.5L8.5 9.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 14L13.5 12L12 10" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.5 15.5L13.5 12.5L15.5 9.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>Academy Gallery</span>
+                 </h2>
+                <!-- Winners of the Month -->
+                <!-- EDITABLE SECTION: WINNERS OF THE MONTH -->
+                <!-- To edit, change the image src, h4 (name), and p (description) for each winner -->
+                <div id="winners-section">
+                    <h3 class="text-3xl font-semibold font-serif text-center mb-8">Winners of the Month</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Winner 1 Start -->
+                        <div class="bg-[#1F2937] rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                            <img src="https://placehold.co/200x200/374151/F9FAFB?text=Winner+1" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-[#374151]" alt="Winner 1">
+                            <h4 class="text-xl font-bold">Anika Sharma</h4>
+                            <p class="text-sm text-gray-400">U-14 Champion</p>
+                        </div>
+                        <!-- Winner 1 End -->
+
+                        <!-- Winner 2 Start -->
+                        <div class="bg-[#1F2937] rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                             <img src="https://placehold.co/200x200/374151/F9FAFB?text=Winner+2" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-[#374151]" alt="Winner 2">
+                            <h4 class="text-xl font-bold">Rohan Mehta</h4>
+                            <p class="text-sm text-gray-400">Monthly Rapid Tournament Winner</p>
+                        </div>
+                        <!-- Winner 2 End -->
+
+                        <!-- Winner 3 Start -->
+                        <div class="bg-[#1F2937] rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                             <img src="https://placehold.co/200x200/374151/F9FAFB?text=Winner+3" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-[#374151]" alt="Winner 3">
+                            <h4 class="text-xl font-bold">Priya Singh</h4>
+                            <p class="text-sm text-gray-400">Best Tactical Player Award</p>
+                        </div>
+                        <!-- Winner 3 End -->
+                    </div>
+                </div>
+                 <!-- Latest FIDE Rated Players -->
+                <!-- NOTE: This section is best updated using the updater.js script -->
+                <div id="fide-players-section" class="mt-16">
+                    <h3 class="text-3xl font-semibold font-serif text-center mb-8">Latest FIDE Rated Players</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="bg-[#1F2937] rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                            <h4 class="text-xl font-bold">Vikram Rao</h4>
+                            <p class="text-2xl font-bold text-gray-300 mt-2">1850</p>
+                        </div>
+                         <div class="bg-[#1F2937] rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                            <h4 class="text-xl font-bold">Sneha Gupta</h4>
+                            <p class="text-2xl font-bold text-gray-300 mt-2">1720</p>
+                        </div>
+                         <div class="bg-[#1F2937] rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                            <h4 class="text-xl font-bold">Aditya Verma</h4>
+                            <p class="text-2xl font-bold text-gray-300 mt-2">1690</p>
+                        </div>
+                         <div class="bg-[#1F2937] rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                            <h4 class="text-xl font-bold">Naina Patel</h4>
+                            <p class="text-2xl font-bold text-gray-300 mt-2">1655</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievements Section -->
+            <section id="achievements" class="page-section">
+                 <h2 class="text-4xl font-bold text-center font-serif mb-12 section-title mx-auto">
+                    <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5"><path d="M12 21.5C17.2467 21.5 21.5 17.2467 21.5 12C21.5 6.75329 17.2467 2.5 12 2.5C6.75329 2.5 2.5 6.75329 2.5 12C2.5 17.2467 6.75329 21.5 12 21.5Z" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.5 8.5L10.5 14.5L7.5 11.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>Our Achievements</span>
+                 </h2>
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <div class="bg-[#1F2937] rounded-lg p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-white">National U-16 Team Champions</h3>
+                        <p class="text-gray-400">2024</p>
+                    </div>
+                    <div class="bg-[#1F2937] rounded-lg p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-white">State Junior Championship Winner</h3>
+                        <p class="text-gray-400">2024 - Anika Sharma</p>
+                    </div>
+                    <div class="bg-[#1F2937] rounded-lg p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-white">Top Rated Academy in the Region</h3>
+                        <p class="text-gray-400">Awarded by National Chess Federation, 2023</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lecturers Section -->
+            <!-- EDITABLE SECTION: LECTURERS -->
+            <!-- To edit, change the image src, h3 (name), first p (title), and second p (description) for each lecturer -->
+            <section id="lecturers" class="page-section">
+                 <h2 class="text-4xl font-bold text-center font-serif mb-12 section-title mx-auto">
+                     <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5"><path d="M12 21.5C17.2467 21.5 21.5 17.2467 21.5 12C21.5 6.75329 17.2467 2.5 12 2.5C6.75329 2.5 2.5 6.75329 2.5 12C2.5 17.2467 6.75329 21.5 12 21.5Z" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.5 12.5C15.5 11.4 14.7 10.5 13.5 10.5H13C12.4 10.5 12 10.1 12 9.5V8.5C12 7.4 11.2 6.5 10 6.5C8.8 6.5 8 7.4 8 8.5V9.5C8 10.1 8.4 10.5 9 10.5H9.5C10.6 10.5 11.5 11.4 11.5 12.5C11.5 13.6 10.6 14.5 9.5 14.5H9C8.4 14.5 8 14.9 8 15.5V16.5C8 17.6 8.8 18.5 10 18.5C11.2 18.5 12 17.6 12 16.5V15.5C12 14.9 12.4 14.5 13 14.5H13.5C14.7 14.5 15.5 13.6 15.5 12.5Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>Our Lecturers</span>
+                 </h2>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
+                    <!-- Lecturer 1 Start -->
+                    <div class="bg-[#1F2937] rounded-lg p-6 shadow-lg flex flex-col sm:flex-row items-center gap-6">
+                        <img src="https://placehold.co/200x200/374151/F9FAFB?text=IM+Anand" class="w-32 h-32 rounded-full border-4 border-[#374151] flex-shrink-0" alt="Lecturer 1">
+                        <div>
+                            <h3 class="text-2xl font-bold">IM Anand Kumar</h3>
+                            <p class="text-sm text-gray-400 mb-2">Head Coach</p>
+                            <p>An International Master with over 20 years of coaching experience, specializing in positional play and endgame theory.</p>
+                        </div>
+                    </div>
+                    <!-- Lecturer 1 End -->
+
+                    <!-- Lecturer 2 Start -->
+                    <div class="bg-[#1F2937] rounded-lg p-6 shadow-lg flex flex-col sm:flex-row items-center gap-6">
+                        <img src="https://placehold.co/200x200/374151/F9FAFB?text=WGM+Vidya" class="w-32 h-32 rounded-full border-4 border-[#374151] flex-shrink-0" alt="Lecturer 2">
+                        <div>
+                            <h3 class="text-2xl font-bold">WGM Vidya Iyer</h3>
+                            <p class="text-sm text-gray-400 mb-2">Senior Coach</p>
+                            <p>A Woman Grandmaster known for her aggressive attacking style and expertise in opening preparation for young talents.</p>
+                        </div>
+                    </div>
+                    <!-- Lecturer 2 End -->
+                </div>
+            </section>
+
+            <!-- Guests Section -->
+            <!-- EDITABLE SECTION: GUEST LECTURERS -->
+            <!-- To edit, change the image src, h4 (name), and p (title) for each guest -->
+            <section id="guests" class="page-section">
+                <h2 class="text-4xl font-bold text-center font-serif mb-12 section-title mx-auto">
+                    <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5"><path d="M5.63605 18.364L18.364 5.63603" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.63605 5.63603L18.364 18.364" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21.5C17.2467 21.5 21.5 17.2467 21.5 12C21.5 6.75329 17.2467 2.5 12 2.5C6.75329 2.5 2.5 6.75329 2.5 12C2.5 17.2467 6.75329 21.5 12 21.5Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>Guest Lecturers</span>
+                </h2>
+                <div class="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Guest 1 Start -->
+                     <div class="bg-[#1F2937] rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/374151/F9FAFB?text=GM+Arjun" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-[#374151]" alt="Guest 1">
+                        <h4 class="text-xl font-bold">GM Arjun Singh</h4>
+                        <p class="text-sm text-gray-400">Former National Champion</p>
+                    </div>
+                    <!-- Guest 1 End -->
+
+                    <!-- Guest 2 Start -->
+                     <div class="bg-[#1F2937] rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/374151/F9FAFB?text=GM+Elena" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-[#374151]" alt="Guest 2">
+                        <h4 class="text-xl font-bold">GM Elena Petrova</h4>
+                        <p class="text-sm text-gray-400">Olympiad Medalist</p>
+                    </div>
+                    <!-- Guest 2 End -->
+
+                    <!-- Guest 3 Start -->
+                     <div class="bg-[#1F2937] rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                        <img src="https://placehold.co/200x200/374151/F9FAFB?text=IM+Raj" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-[#374151]" alt="Guest 3">
+                        <h4 class="text-xl font-bold">IM Raj Malhotra</h4>
+                        <p class="text-sm text-gray-400">Renowned Author & Theorist</p>
+                    </div>
+                    <!-- Guest 3 End -->
+                </div>
+            </section>
+
+            <!-- Camps Section -->
+            <!-- EDITABLE SECTION: CAMPS & WORKSHOPS -->
+            <!-- To edit, change h3 (title), first p (description), and second p (dates) for each camp -->
+            <section id="camps" class="page-section">
+                <h2 class="text-4xl font-bold text-center font-serif mb-12 section-title mx-auto">
+                    <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5"><path d="M12 21.5C17.2467 21.5 21.5 17.2467 21.5 12C21.5 6.75329 17.2467 2.5 12 2.5C6.75329 2.5 2.5 6.75329 2.5 12C2.5 17.2467 6.75329 21.5 12 21.5Z" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 21.5V15.5H14.5V21.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 9.5H14.5V2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>Chess Camps & Workshops</span>
+                </h2>
+                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Camp 1 Start -->
+                    <div class="bg-[#1F2937] rounded-lg p-6 shadow-lg flex flex-col">
+                        <h3 class="text-2xl font-bold mb-2">Summer Beginner Camp</h3>
+                        <p class="text-gray-400 mb-4 flex-grow">Perfect for newcomers. Learn the rules, basic tactics, and fundamental checkmates in a fun environment.</p>
+                        <p class="font-semibold mb-4">Dates: June 15 - June 25</p>
+                        <a href="#contact" class="nav-trigger mt-auto text-center bg-[#374151] text-white font-bold py-2 px-4 rounded hover:bg-opacity-90 transition-colors">Register Now</a>
+                    </div>
+                    <!-- Camp 1 End -->
+
+                    <!-- Camp 2 Start -->
+                     <div class="bg-[#1F2937] rounded-lg p-6 shadow-lg flex flex-col">
+                        <h3 class="text-2xl font-bold mb-2">Intermediate Tactics Workshop</h3>
+                        <p class="text-gray-400 mb-4 flex-grow">Deep dive into tactical motifs like forks, pins, skewers, and discovered attacks. For players rated 1200-1600.</p>
+                        <p class="font-semibold mb-4">Dates: July 5 - July 10</p>
+                        <a href="#contact" class="nav-trigger mt-auto text-center bg-[#374151] text-white font-bold py-2 px-4 rounded hover:bg-opacity-90 transition-colors">Register Now</a>
+                    </div>
+                    <!-- Camp 2 End -->
+
+                    <!-- Camp 3 Start -->
+                     <div class="bg-[#1F2937] rounded-lg p-6 shadow-lg flex flex-col">
+                        <h3 class="text-2xl font-bold mb-2">Advanced Endgame Masterclass</h3>
+                        <p class="text-gray-400 mb-4 flex-grow">Master complex rook, pawn, and minor piece endgames with guidance from our top coaches.</p>
+                        <p class="font-semibold mb-4">Dates: August 1 - August 7</p>
+                        <a href="#contact" class="nav-trigger mt-auto text-center bg-[#374151] text-white font-bold py-2 px-4 rounded hover:bg-opacity-90 transition-colors">Register Now</a>
+                    </div>
+                    <!-- Camp 3 End -->
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="page-section">
+                 <h2 class="text-4xl font-bold text-center font-serif mb-12 section-title mx-auto">
+                    <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5"><path d="M12 21.5C17.2467 21.5 21.5 17.2467 21.5 12C21.5 6.75329 17.2467 2.5 12 2.5C6.75329 2.5 2.5 6.75329 2.5 12C2.5 17.2467 6.75329 21.5 12 21.5Z" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 15.5C14.0711 15.5 15.75 13.8211 15.75 11.75C15.75 9.67893 14.0711 8 12 8C9.92893 8 8.25 9.67893 8.25 11.75C8.25 13.8211 9.92893 15.5 12 15.5Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>Get In Touch</span>
+                 </h2>
+                <div class="max-w-lg mx-auto bg-[#1F2937] rounded-lg p-8 text-center shadow-lg">
+                    <p class="text-lg mb-6 text-gray-300">For inquiries, registrations, and more information, please contact us directly via WhatsApp.</p>
+                    <!-- EDITABLE: WHATSAPP NUMBER -->
+                    <!-- Change the '911234567890' part of the link to your number, including the country code -->
+                    <a href="https://wa.me/911234567890" target="_blank" class="inline-flex items-center gap-3 bg-green-500 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-green-600 transition-all transform hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.267.655 4.398 1.803 6.166l-1.331 4.873 4.883-1.286zM9.305 16.324a.636.636 0 0 0-.427-.636c-.195-.102-1.155-.568-1.334-.63a.636.636 0 0 0-.58.122c-.195.195-.506.636-.621.762-.115.126-.23.149-.426.047-.195-.102-.82-.303-1.562-.967-.577-.517-1.102-1.155-1.226-1.353-.124-.195-.015-.303.088-.405.09-.09.195-.23.294-.347a.636.636 0 0 0 .17-.294c.047-.126.023-.23-.023-.33L6.13 8.334a.636.636 0 0 0-.554-.477c-.195-.047-.426-.047-.621-.047h-.17c-.195 0-.506.07-.753.37-.247.299-.967 1.129-.967 2.749 0 1.62.99 3.193 1.138 3.411.148.217 1.95 2.993 4.729 4.19.69.284 1.25.448 1.688.563.438.115.82.093 1.129.047s1.155-.477 1.334-.919c.179-.442.179-.821.124-.919-.055-.098-.195-.149-.426-.247z"/></svg>
+                        <span>Chat on WhatsApp</span>
+                    </a>
+                    <div class="mt-8 text-gray-400">
+                        <!-- EDITABLE: CONTACT INFO -->
+                        <p><strong>Email:</strong> contact@gcachess.com</p>
+                        <p><strong>Address:</strong> 123 Chessboard Lane, Checkmate City, IN 400001</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-black border-t border-[#374151]">
+            <div class="container mx-auto py-6 px-4 text-center text-gray-400">
+                <p>&copy; 2025 INDO-US CHESS ACADEMY. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navTriggers = document.querySelectorAll('.nav-trigger');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pageSections = document.querySelectorAll('.page-section');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            function showPage(pageId) {
+                // Hide all sections
+                pageSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                // Show the target section
+                const targetSection = document.getElementById(pageId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+
+                // Update active link style
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if(link.getAttribute('href') === `#${pageId}`) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Close mobile menu
+                mobileMenu.classList.add('hidden');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            }
+            
+            navTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const pageId = this.getAttribute('href').substring(1);
+                    showPage(pageId);
+                    // Update URL hash without jumping
+                    history.pushState(null, null, `#${pageId}`);
+                });
+            });
+
+            // Mobile menu toggle
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Handle browser back/forward
+            window.addEventListener('popstate', function() {
+                const pageId = location.hash.substring(1) || 'home';
+                showPage(pageId);
+            });
+
+            // Show initial page based on URL hash or default to home
+            const initialPageId = location.hash.substring(1) || 'home';
+            showPage(initialPageId);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
