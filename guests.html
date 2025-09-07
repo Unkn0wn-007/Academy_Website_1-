@@ -8,35 +8,48 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+
+    <!-- PRELOADER START -->
+    <div class="preloader">
+        <div class="loader-icon">♟</div>
+    </div>
+    <!-- PRELOADER END -->
+
     <div class="min-h-screen flex flex-col">
+        <!-- Header & Navigation -->
         <header class="header-bg shadow-md sticky top-0 z-50">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-20">
-                    <a href="index.html" class="flex items-center space-x-3">
-                        <!-- This is the link to your logo image. Make sure 'logo.png' is inside an 'images' folder. -->
-                        <img src="images/logo.png" alt="INDO-US Chess Academy Logo" class="h-14">
+                    <a href="index.html" class="flex items-center space-x-4">
+                        <!-- Logo -->
+                        <img src="images/logo.png" alt="INDO-US Chess Academy Logo" class="logo-img">
                         <span class="text-xl font-semibold font-serif tracking-wide">INDO-US CHESS ACADEMY</span>
                     </a>
+                    <!-- Desktop Navigation -->
                     <nav class="hidden md:flex flex-grow justify-center space-x-8">
                         <a href="index.html" class="nav-link">Home</a>
                         <a href="gallery.html" class="nav-link">Gallery</a>
+                        <a href="students.html" class="nav-link">Students</a>
                         <a href="achievements.html" class="nav-link">Achievements</a>
                         <a href="lecturers.html" class="nav-link">Lecturers</a>
                         <a href="guests.html" class="nav-link">Guest Lecturers</a>
                         <a href="camps.html" class="nav-link">Camps</a>
                         <a href="contact.html" class="nav-link">Contact</a>
                     </nav>
+                    <!-- Mobile Menu Button -->
                     <div class="md:hidden">
                         <button id="mobile-menu-button" class="focus:outline-none"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg></button>
                     </div>
                 </div>
             </div>
+            <!-- Mobile Menu -->
             <div id="mobile-menu" class="md:hidden hidden bg-bg-cream">
                 <a href="index.html" class="block py-3 px-4 text-sm">Home</a>
                 <a href="gallery.html" class="block py-3 px-4 text-sm">Gallery</a>
+                <a href="students.html" class="block py-3 px-4 text-sm">Students</a>
                 <a href="achievements.html" class="block py-3 px-4 text-sm">Achievements</a>
                 <a href="lecturers.html" class="block py-3 px-4 text-sm">Lecturers</a>
                 <a href="guests.html" class="block py-3 px-4 text-sm">Guest Lecturers</a>
@@ -45,6 +58,7 @@
             </div>
         </header>
 
+        <!-- Main Content -->
         <main class="flex-grow container mx-auto p-4 sm:p-6 lg:p-8">
             <section class="animate-fadeIn">
                 <h2 class="text-4xl font-bold text-center font-serif mb-12 section-title mx-auto">
@@ -52,21 +66,21 @@
                     <span>Guest Lecturers</span>
                 </h2>
                 <div class="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Guest 1: Replace with your image -->
-                    <div class="card-bg rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
-                        <img src="images/guest1.jpg" onerror="this.src='https://placehold.co/200x200/D7CCC8/4A2E2A?text=GM+Arjun';" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-white" alt="Guest 1">
+                    <!-- Guest 1 -->
+                     <div class="card-bg rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                        <img src="images/guest1.jpg" onerror="this.src='https://placehold.co/200x200/D7CCC8/4A2E2A?text=GM+Arjun';" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white object-cover" alt="GM Arjun Singh">
                         <h4 class="text-xl font-bold">GM Arjun Singh</h4>
                         <p class="text-sm text-accent-brown">Former National Champion</p>
                     </div>
-                    <!-- Guest 2: Replace with your image -->
-                    <div class="card-bg rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
-                        <img src="images/guest2.jpg" onerror="this.src='https://placehold.co/200x200/D7CCC8/4A2E2A?text=GM+Elena';" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-white" alt="Guest 2">
+                    <!-- Guest 2 -->
+                     <div class="card-bg rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                        <img src="images/guest2.jpg" onerror="this.src='https://placehold.co/200x200/D7CCC8/4A2E2A?text=GM+Elena';" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white object-cover" alt="GM Elena Petrova">
                         <h4 class="text-xl font-bold">GM Elena Petrova</h4>
                         <p class="text-sm text-accent-brown">Olympiad Medalist</p>
                     </div>
-                    <!-- Guest 3: Replace with your image -->
-                    <div class="card-bg rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
-                        <img src="images/guest3.jpg" onerror="this.src='https://placehold.co/200x200/D7CCC8/4A2E2A?text=IM+Raj';" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-white" alt="Guest 3">
+                    <!-- Guest 3 -->
+                     <div class="card-bg rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                        <img src="images/guest3.jpg" onerror="this.src='https://placehold.co/200x200/D7CCC8/4A2E2A?text=IM+Raj';" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white object-cover" alt="IM Raj Malhotra">
                         <h4 class="text-xl font-bold">IM Raj Malhotra</h4>
                         <p class="text-sm text-accent-brown">Renowned Author & Theorist</p>
                     </div>
@@ -80,7 +94,7 @@
             </div>
         </footer>
     </div>
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
 

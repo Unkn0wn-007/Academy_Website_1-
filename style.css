@@ -3,13 +3,12 @@
     --bg-cream: #F5EFE6;
     --text-brown: #4A2E2A;
     --accent-brown: #8D6E63;
-    --light-cream: #FFFBF5;
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-cream);
-    color: var(--text-brown);
+    background-color: var(--bg-cream); /* Cream Background */
+    color: var(--text-brown); /* Dark Brown Text */
 }
 
 .font-serif {
@@ -29,7 +28,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--text-brown);
+    background-color: var(--text-brown); /* Dark brown accent for underline */
     transition: width 0.3s ease;
 }
 
@@ -38,41 +37,97 @@ body {
     width: 100%;
 }
 
-.section-title {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
+/* Card and Header background with transparency */
 .card-bg {
-    background-color: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(74, 46, 42, 0.1);
-    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white for a frosted look */
+    border: 1px solid rgba(74, 46, 42, 0.1); /* Subtle brown border */
 }
 
 .header-bg {
-    background-color: rgba(245, 239, 230, 0.85);
-    backdrop-filter: blur(10px);
+    background-color: rgba(245, 239, 230, 0.8); /* Semi-transparent cream */
+    backdrop-filter: blur(8px);
 }
 
+/* Hero Section Styling for Homepage */
 .hero-section {
-    background-image: linear-gradient(rgba(74, 46, 42, 0.75), rgba(74, 46, 42, 0.75)), url('https://images.unsplash.com/photo-1580541832626-2a7131ee809f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=2400');
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1580541832626-2a7131ee809f?q=80&w=2070&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
-    color: var(--bg-cream);
+    border-radius: 0.5rem; /* 8px */
+    overflow: hidden;
+    color: white;
 }
 
-.testimonial-card {
-    background-color: var(--light-cream);
-    border-left: 5px solid var(--accent-brown);
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Logo Styling */
+.logo-img {
+    height: 3.5rem; /* 56px */
+    width: 3.5rem; /* 56px */
+    border-radius: 9999px; /* Full circle */
+    object-fit: cover; /* Ensures image covers the circle */
+    border: 2px solid var(--text-brown);
+}
+
+/* Preloader Styles */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-cream);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-icon {
+    font-size: 4rem; /* 64px */
+    color: var(--text-brown);
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+}
+
+/* General Animation for page content */
+.animate-fadeIn {
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fadeIn {
-    animation: fadeIn 0.5s ease-in-out forwards;
 }
 

@@ -2,21 +2,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelectorAll('.nav-link');
-    const currentPath = window.location.pathname.split("/").pop();
+    const preloader = document.querySelector('.preloader');
 
-    // Mobile menu toggle
-    mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
+    // --- Preloader ---
+    window.addEventListener('load', () => {
+        preloader.classList.add('hidden');
     });
 
-    // Set active link
+    // --- Mobile Menu Toggle ---
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+
+    // --- Active Nav Link Highlighter ---
+    const currentPage = window.location.pathname.split("/").pop();
+    
     navLinks.forEach(link => {
-        const linkPath = link.getAttribute('href');
-        // Handle index.html being the root path
-        if ((currentPath === '' || currentPath === 'index.html') && linkPath === 'index.html') {
-             link.classList.add('active');
-        } else if (linkPath === currentPath) {
-            link.classList.add('active');
+        const linkPage = link.getAttribute('href');
+        
+        // Handle homepage case (index.html or empty path)
+        if (currentPage === '' || currentPage === 'index.html') {
+            if (linkPage === 'index.html') {
+                link.classList.add('active');
+            }
+        } else {
+            // Handle other pages
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            }
         }
     });
 });
