@@ -75,6 +75,36 @@ body {
     z-index: 2;
 }
 
+/* --- NEW: Interactive Button Styles --- */
+.hero-button {
+    transition: all 0.3s ease;
+    border: 2px solid transparent; /* Base border */
+}
+
+.hero-button-primary {
+    background-color: var(--text-brown);
+    color: var(--bg-cream);
+}
+.hero-button-primary:hover {
+    background-color: var(--accent-brown);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.hero-button-secondary {
+    background-color: transparent;
+    border-color: var(--bg-cream);
+    color: var(--bg-cream);
+}
+.hero-button-secondary:hover {
+    background-color: var(--bg-cream);
+    color: var(--text-brown);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+/* --- END: Interactive Button Styles --- */
+
+
 /* Logo Styling */
 .logo-img {
     height: 3.5rem; /* 56px */
@@ -130,4 +160,5 @@ body {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
 
