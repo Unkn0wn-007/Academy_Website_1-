@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-cream); /* Cream Background */
-    color: var(--text-brown); /* Dark Brown Text */
+    background-color: var(--bg-cream);
+    color: var(--text-brown);
 }
 
 .font-serif {
@@ -28,7 +28,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--text-brown); /* Dark brown accent for underline */
+    background-color: var(--text-brown);
     transition: width 0.3s ease;
 }
 
@@ -37,28 +37,24 @@ body {
     width: 100%;
 }
 
-/* Card and Header background with transparency */
 .card-bg {
-    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white for a frosted look */
-    border: 1px solid rgba(74, 46, 42, 0.1); /* Subtle brown border */
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(74, 46, 42, 0.1);
 }
 
 .header-bg {
-    background-color: rgba(245, 239, 230, 0.8); /* Semi-transparent cream */
+    background-color: rgba(245, 239, 230, 0.8);
     backdrop-filter: blur(8px);
 }
 
-/* Hero Section Styling for Homepage */
+/* --- HERO SECTION STYLES (FIXES VISIBILITY & BUTTONS) --- */
 .hero-section {
-    position: relative;
     background-image: url('https://images.unsplash.com/photo-1580541832626-2a7131ee809f?q=80&w=2070&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
-    border-radius: 0.5rem; /* 8px */
-    overflow: hidden;
+    position: relative;
     color: white;
 }
-
 .hero-section::before {
     content: '';
     position: absolute;
@@ -66,21 +62,24 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
-
 .hero-content {
     position: relative;
     z-index: 2;
 }
 
-/* --- NEW: Interactive Button Styles --- */
-.hero-button {
-    transition: all 0.3s ease;
-    border: 2px solid transparent; /* Base border */
+/* FIX: This adds a shadow to make the text visible */
+.hero-content h1, .hero-content p {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
+/* FIX: These styles make the buttons interactive */
+.hero-button {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
 .hero-button-primary {
     background-color: var(--text-brown);
     color: var(--bg-cream);
@@ -90,7 +89,6 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-
 .hero-button-secondary {
     background-color: transparent;
     border-color: var(--bg-cream);
@@ -102,16 +100,24 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-/* --- END: Interactive Button Styles --- */
-
+/* --- END OF HERO SECTION FIXES --- */
 
 /* Logo Styling */
 .logo-img {
     height: 3.5rem; /* 56px */
     width: 3.5rem; /* 56px */
-    border-radius: 9999px; /* Full circle */
-    object-fit: cover; /* Ensures image covers the circle */
+    border-radius: 50%;
+    object-fit: cover;
     border: 2px solid var(--text-brown);
+}
+
+/* General Page Animation */
+.animate-fadeIn {
+    animation: fadeIn 0.6s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Preloader Styles */
@@ -128,37 +134,17 @@ body {
     z-index: 9999;
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
-
 .preloader.hidden {
     opacity: 0;
     visibility: hidden;
 }
-
 .loader-icon {
-    font-size: 4rem; /* 64px */
+    font-size: 4rem;
     color: var(--text-brown);
     animation: pulse 1.5s infinite ease-in-out;
 }
-
 @keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.2);
-        opacity: 0.7;
-    }
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
 }
-
-/* General Animation for page content */
-.animate-fadeIn {
-    animation: fadeIn 0.8s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 
