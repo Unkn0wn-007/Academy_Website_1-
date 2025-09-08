@@ -1,0 +1,83 @@
+// This is the "database" for your gallery page.
+// To add a new photo, copy an existing entry and change the details.
+// Make sure the 'src' name matches the image file in your 'images' folder.
+
+const galleryImages = [
+    {
+        src: 'tournament1.jpg',
+        title: 'State Championship 2025',
+        description: 'Our team competing in the finals.'
+    },
+    {
+        src: 'camp1.jpg',
+        title: 'Summer Camp Fun',
+        description: 'Learning openings with IM Anand Kumar.'
+    },
+    {
+        src: 'winner1.jpg',
+        title: 'Anika Sharma',
+        description: 'U-14 Champion of the Month.'
+    },
+    {
+        src: 'tournament2.jpg',
+        title: 'Rapid Tournament',
+        description: 'Intense moments from the monthly rapid event.'
+    },
+    {
+        src: 'camp2.jpg',
+        title: 'Advanced Masterclass',
+        description: 'Endgame studies with our senior coaches.'
+    },
+    {
+        src: 'winner2.jpg',
+        title: 'Rohan Mehta',
+        description: 'Winner of the Monthly Rapid Tournament.'
+    },
+    // Add more photos from your events here
+    // Example:
+    // {
+    //     src: 'new_event_photo.jpg',
+    //     title: 'Event Title',
+    //     description: 'A short description of the photo.'
+    // },
+];
+
+
+// This function runs when the gallery.html page loads.
+// It reads the 'galleryImages' array and builds the HTML for each photo.
+document.addEventListener('DOMContentLoaded', () => {
+    const photoGrid = document.getElementById('photo-grid');
+    if (photoGrid) {
+        galleryImages.forEach(image => {
+            const photoCard = document.createElement('div');
+            photoCard.className = 'card-bg rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform';
+
+            const imageTag = document.createElement('img');
+            imageTag.className = 'w-full h-48 object-cover';
+            imageTag.src = `images/${image.src}`;
+            imageTag.alt = image.title;
+            imageTag.onerror = () => { 
+                imageTag.src = 'https://placehold.co/400x300/D7CCC8/4A2E2A?text=Event+Photo';
+            };
+
+            const textWrapper = document.createElement('div');
+            textWrapper.className = 'p-4';
+
+            const titleTag = document.createElement('h4');
+            titleTag.className = 'text-lg font-bold';
+            titleTag.textContent = image.title;
+
+            const descriptionTag = document.createElement('p');
+            descriptionTag.className = 'text-sm text-accent-brown mt-1';
+            descriptionTag.textContent = image.description;
+
+            textWrapper.appendChild(titleTag);
+            textWrapper.appendChild(descriptionTag);
+            photoCard.appendChild(imageTag);
+            photoCard.appendChild(textWrapper);
+
+            photoGrid.appendChild(photoCard);
+        });
+    }
+});
+

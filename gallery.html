@@ -1,82 +1,141 @@
-// This is the "database" for your gallery page.
-// To add a new photo, copy an existing entry and change the details.
-// Make sure the 'src' name matches the image file in your 'images' folder.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDO-US CHESS ACADEMY - Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
 
-const galleryImages = [
-    {
-        src: 'tournament1.jpg',
-        title: 'State Championship 2025',
-        description: 'Our team competing in the finals.'
-    },
-    {
-        src: 'camp1.jpg',
-        title: 'Summer Camp Fun',
-        description: 'Learning openings with IM Anand Kumar.'
-    },
-    {
-        src: 'winner1.jpg',
-        title: 'Anika Sharma',
-        description: 'U-14 Champion of the Month.'
-    },
-    {
-        src: 'tournament2.jpg',
-        title: 'Rapid Tournament',
-        description: 'Intense moments from the monthly rapid event.'
-    },
-    {
-        src: 'camp2.jpg',
-        title: 'Advanced Masterclass',
-        description: 'Endgame studies with our senior coaches.'
-    },
-    {
-        src: 'winner2.jpg',
-        title: 'Rohan Mehta',
-        description: 'Winner of the Monthly Rapid Tournament.'
-    },
-    // Add more photos from your events here
-    // Example:
-    // {
-    //     src: 'new_event_photo.jpg',
-    //     title: 'Event Title',
-    //     description: 'A short description of the photo.'
-    // },
-];
+    <!-- PRELOADER START -->
+    <div class="preloader">
+        <div class="preloader-board">
+            <div class="row-1 flex">
+                <div class="preloader-square"><div class="preloader-piece piece-rook">♖</div></div>
+                <div class="preloader-square"><div class="preloader-piece piece-knight">♘</div></div>
+                <div class="preloader-square"><div class="preloader-piece piece-bishop">♗</div></div>
+                <div class="preloader-square"><div class="preloader-piece piece-queen">♕</div></div>
+            </div>
+            <div class="row-2 flex">
+                <div class="preloader-square"><div class="preloader-piece piece-pawn">♙</div></div>
+                <div class="preloader-square"><div class="preloader-piece piece-pawn">♙</div></div>
+                <div class="preloader-square"><div class="preloader-piece piece-pawn">♙</div></div>
+                <div class="preloader-square"><div class="preloader-piece piece-pawn">♙</div></div>
+            </div>
+        </div>
+    </div>
+    <!-- PRELOADER END -->
 
+    <div class="min-h-screen flex flex-col">
+        <!-- Header & Navigation -->
+        <header class="header-bg shadow-md sticky top-0 z-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <a href="index.html" class="flex items-center space-x-4">
+                        <img src="images/logo.png" alt="INDO-US Chess Academy Logo" class="logo-img">
+                        <span class="text-xl font-semibold font-serif tracking-wide">INDO-US CHESS ACADEMY</span>
+                    </a>
+                    <nav class="hidden md:flex flex-grow justify-center space-x-8">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="gallery.html" class="nav-link">Gallery</a>
+                        <a href="students.html" class="nav-link">Students</a>
+                        <a href="achievements.html" class="nav-link">Achievements</a>
+                        <a href="lecturers.html" class="nav-link">Lecturers</a>
+                        <a href="guests.html" class="nav-link">Guest Lecturers</a>
+                        <a href="camps.html" class="nav-link">Camps</a>
+                        <a href="index.html#contact" class="nav-link">Contact</a>
+                    </nav>
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" class="focus:outline-none"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg></button>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden bg-bg-cream">
+                <a href="index.html" class="block py-3 px-4 text-sm">Home</a>
+                <a href="gallery.html" class="block py-3 px-4 text-sm">Gallery</a>
+                <a href="students.html" class="block py-3 px-4 text-sm">Students</a>
+                <a href="achievements.html" class="block py-3 px-4 text-sm">Achievements</a>
+                <a href="lecturers.html" class="block py-3 px-4 text-sm">Lecturers</a>
+                <a href="guests.html" class="block py-3 px-4 text-sm">Guest Lecturers</a>
+                <a href="camps.html" class="block py-3 px-4 text-sm">Camps</a>
+                <a href="index.html#contact" class="block py-3 px-4 text-sm">Contact</a>
+            </div>
+        </header>
 
-// This function runs when the gallery.html page loads.
-// It reads the 'galleryImages' array and builds the HTML for each photo.
-document.addEventListener('DOMContentLoaded', () => {
-    const photoGrid = document.getElementById('photo-grid');
-    if (photoGrid) {
-        galleryImages.forEach(image => {
-            const photoCard = document.createElement('div');
-            photoCard.className = 'card-bg rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform';
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto p-4 sm:p-6 lg:p-8">
+            <section class="animate-fadeIn">
+                 <h2 class="text-4xl font-bold text-center font-serif mb-12 section-title mx-auto">
+                    <svg class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C9.24 2 7 4.24 7 7C7 9.76 9.24 12 12 12S17 9.76 17 7C17 4.24 14.76 2 12 2ZM12 14C10.9 14 10 14.9 10 16V18H14V16C14 14.9 13.1 14 12 14ZM20 20H4V18C4 16.9 4.9 16 6 16H8V14C8 12.9 8.9 12 10 12H14C15.1 12 16 12.9 16 14V16H18C19.1 16 20 16.9 20 18V20Z"/></svg>
+                    <span>Academy Gallery</span>
+                 </h2>
+                <!-- Winners of the Month -->
+                <div id="winners-section">
+                    <h3 class="text-3xl font-semibold font-serif text-center mb-8">Winners of the Month</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Winner 1 -->
+                        <div class="card-bg rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                            <img src="images/winner1.jpg" onerror="this.src='https://placehold.co/200x200/D7CCC8/4A2E2A?text=Winner+1';" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white object-cover" alt="Anika Sharma">
+                            <h4 class="text-xl font-bold">Anika Sharma</h4>
+                            <p class="text-sm text-accent-brown">U-14 Champion</p>
+                        </div>
+                        <!-- Winner 2 -->
+                        <div class="card-bg rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                             <img src="images/winner2.jpg" onerror="this.src='https://placehold.co/200x200/D7CCC8/4A2E2A?text=Winner+2';" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white object-cover" alt="Rohan Mehta">
+                            <h4 class="text-xl font-bold">Rohan Mehta</h4>
+                            <p class="text-sm text-accent-brown">Monthly Rapid Tournament Winner</p>
+                        </div>
+                        <!-- Winner 3 -->
+                        <div class="card-bg rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                             <img src="images/winner3.jpg" onerror="this.src='https://placehold.co/200x200/D7CCC8/4A2E2A?text=Winner+3';" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white object-cover" alt="Priya Singh">
+                            <h4 class="text-xl font-bold">Priya Singh</h4>
+                            <p class="text-sm text-accent-brown">Best Tactical Player Award</p>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Latest FIDE Rated Players -->
+                <div id="fide-players-section" class="mt-16">
+                    <h3 class="text-3xl font-semibold font-serif text-center mb-8">Latest FIDE Rated Players</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="card-bg rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                            <h4 class="text-xl font-bold">Vikram Rao</h4>
+                            <p class="text-2xl font-bold text-accent-brown mt-2">1850</p>
+                        </div>
+                         <div class="card-bg rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                            <h4 class="text-xl font-bold">Sneha Gupta</h4>
+                            <p class="text-2xl font-bold text-accent-brown mt-2">1720</p>
+                        </div>
+                         <div class="card-bg rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                            <h4 class="text-xl font-bold">Aditya Verma</h4>
+                            <p class="text-2xl font-bold text-accent-brown mt-2">1690</p>
+                        </div>
+                         <div class="card-bg rounded-lg p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                            <h4 class="text-xl font-bold">Naina Patel</h4>
+                            <p class="text-2xl font-bold text-accent-brown mt-2">1655</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-            const imageTag = document.createElement('img');
-            imageTag.className = 'w-full h-48 object-cover';
-            imageTag.src = `images/${image.src}`;
-            imageTag.alt = image.title;
-            imageTag.onerror = () => { 
-                imageTag.src = 'https://placehold.co/400x300/D7CCC8/4A2E2A?text=Event+Photo';
-            };
+        <footer class="bg-text-brown border-t border-accent-brown mt-auto">
+            <div class="container mx-auto py-6 px-4 text-center text-bg-cream">
+                <p>&copy; 2025 INDO-US CHESS ACADEMY. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
 
-            const textWrapper = document.createElement('div');
-            textWrapper.className = 'p-4';
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/911234567890" target="_blank" class="floating-whatsapp">
+        <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="WhatsApp icon"><path d="M16.75 13.96c.25.42.42.88.5 1.38-.17.08-.34.17-.5.25-.5.25-1.17.58-1.84.5-1-.08-1.58-.5-2.42-1.25s-1.42-1.75-1.5-2.5c-.08-.75.33-1.25.5-1.5.17-.17.33-.33.5-.5.5-.42 1-.83 1.38-.5.33.25.67.5.92.75.25.33.42.67.25.92-.17.33-.42.58-.67.75-.17.17-.25.33-.08.58.25.5.58 1.08 1.08 1.58.5.5 1.08.83 1.58 1.08.25.17.42.08.58-.08.17-.25.42-.5.75-.67.25-.17.58-.08.92.25.25.25.5.58.75.92zM12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path></svg>
+    </a>
 
-            const titleTag = document.createElement('h4');
-            titleTag.className = 'text-lg font-bold';
-            titleTag.textContent = image.title;
+    <script src="./script.js"></script>
+</body>
+</html>
 
-            const descriptionTag = document.createElement('p');
-            descriptionTag.className = 'text-sm text-accent-brown mt-1';
-            descriptionTag.textContent = image.description;
-
-            textWrapper.appendChild(titleTag);
-            textWrapper.appendChild(descriptionTag);
-            photoCard.appendChild(imageTag);
-            photoCard.appendChild(textWrapper);
-
-            photoGrid.appendChild(photoCard);
-        });
-    }
-});
