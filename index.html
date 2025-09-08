@@ -14,7 +14,20 @@
 
     <!-- PRELOADER START -->
     <div class="preloader">
-        <div class="loader-icon">♟</div>
+        <div class="preloader-board">
+            <div class="row-1 flex">
+                <div class="preloader-square"><div class="preloader-piece piece-rook">♖</div></div>
+                <div class="preloader-square"><div class="preloader-piece piece-knight">♘</div></div>
+                <div class="preloader-square"><div class="preloader-piece piece-bishop">♗</div></div>
+                <div class="preloader-square"><div class="preloader-piece piece-queen">♕</div></div>
+            </div>
+            <div class="row-2 flex">
+                <div class="preloader-square"><div class="preloader-piece piece-pawn">♙</div></div>
+                <div class="preloader-square"><div class="preloader-piece piece-pawn">♙</div></div>
+                <div class="preloader-square"><div class="preloader-piece piece-pawn">♙</div></div>
+                <div class="preloader-square"><div class="preloader-piece piece-pawn">♙</div></div>
+            </div>
+        </div>
     </div>
     <!-- PRELOADER END -->
 
@@ -35,7 +48,7 @@
                         <a href="lecturers.html" class="nav-link">Lecturers</a>
                         <a href="guests.html" class="nav-link">Guest Lecturers</a>
                         <a href="camps.html" class="nav-link">Camps</a>
-                        <a href="contact.html" class="nav-link">Contact</a>
+                        <a href="index.html#contact" class="nav-link">Contact</a>
                     </nav>
                     <div class="md:hidden">
                         <button id="mobile-menu-button" class="focus:outline-none"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg></button>
@@ -50,7 +63,7 @@
                 <a href="lecturers.html" class="block py-3 px-4 text-sm">Lecturers</a>
                 <a href="guests.html" class="block py-3 px-4 text-sm">Guest Lecturers</a>
                 <a href="camps.html" class="block py-3 px-4 text-sm">Camps</a>
-                <a href="contact.html" class="block py-3 px-4 text-sm">Contact</a>
+                <a href="index.html#contact" class="block py-3 px-4 text-sm">Contact</a>
             </div>
         </header>
 
@@ -62,7 +75,7 @@
                     <h1 class="text-4xl md:text-6xl font-extrabold font-serif tracking-tight mb-4">Master Your Mind, Master the Game.</h1>
                     <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">Join a community of champions and elevate your chess skills with world-class coaching.</p>
                     <div class="flex justify-center items-center space-x-4">
-                        <a href="contact.html" class="hero-button hero-button-primary font-bold py-3 px-8 rounded-lg text-lg">Enroll Now</a>
+                        <a href="#contact" class="hero-button hero-button-primary font-bold py-3 px-8 rounded-lg text-lg">Enroll Now</a>
                         <a href="camps.html" class="hero-button hero-button-secondary font-bold py-3 px-8 rounded-lg text-lg">View Camps</a>
                     </div>
                 </div>
@@ -97,6 +110,74 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Programs at a Glance Section -->
+            <section class="py-16 md:py-24">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center font-serif mb-12">Programs at a Glance</h2>
+                    <div class="grid md:grid-cols-3 gap-10">
+                        <div class="card-bg rounded-lg p-8 shadow-lg flex flex-col text-center">
+                            <h3 class="text-2xl font-bold mb-2">Beginner Camps</h3>
+                            <p class="text-accent-brown mb-4 flex-grow">Learn the rules, basic tactics, and fundamental checkmates in a fun environment.</p>
+                            <div class="mt-auto pt-4">
+                                <a href="camps.html" class="inline-block bg-text-brown text-bg-cream font-bold py-2 px-6 rounded hover:bg-opacity-90 transition-colors">Learn More</a>
+                            </div>
+                        </div>
+                         <div class="card-bg rounded-lg p-8 shadow-lg flex flex-col text-center">
+                            <h3 class="text-2xl font-bold mb-2">Intermediate Workshops</h3>
+                            <p class="text-accent-brown mb-4 flex-grow">Deep dive into tactical motifs like forks, pins, and discovered attacks.</p>
+                            <div class="mt-auto pt-4">
+                                <a href="camps.html" class="inline-block bg-text-brown text-bg-cream font-bold py-2 px-6 rounded hover:bg-opacity-90 transition-colors">Learn More</a>
+                            </div>
+                        </div>
+                         <div class="card-bg rounded-lg p-8 shadow-lg flex flex-col text-center">
+                            <h3 class="text-2xl font-bold mb-2">Advanced Masterclass</h3>
+                            <p class="text-accent-brown mb-4 flex-grow">Master complex rook, pawn, and minor piece endgames with our top coaches.</p>
+                            <div class="mt-auto pt-4">
+                                <a href="camps.html" class="inline-block bg-text-brown text-bg-cream font-bold py-2 px-6 rounded hover:bg-opacity-90 transition-colors">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Contact Section -->
+            <section id="contact" class="py-16 md:py-24">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl font-bold text-center font-serif mb-12 section-title mx-auto">
+                        <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C10.9 2 10 2.9 10 4V16C10 17.1 10.9 18 12 18S14 17.1 14 16V4C14 2.9 13.1 2 12 2ZM12 20C11.17 20 10.5 20.67 10.5 21.5S11.17 23 12 23 13.5 22.33 13.5 21.5 12.83 20 12 20Z"/></svg>
+                        <span>Get In Touch</span>
+                    </h2>
+                    <div class="max-w-4xl mx-auto grid lg:grid-cols-2 gap-10">
+                        <div class="card-bg rounded-lg p-8 text-center shadow-lg flex flex-col">
+                            <div class="flex-grow">
+                                <p class="text-lg mb-6 text-accent-brown">For inquiries, registrations, and more information, please contact us directly via WhatsApp.</p>
+                                <div class="mt-auto pt-6 border-t border-[--accent-brown] border-opacity-20">
+                                    <a href="https://wa.me/911234567890" target="_blank" class="inline-flex items-center gap-3 bg-green-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-green-700 transition-all transform hover:scale-105">
+                                       <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="WhatsApp icon"><path d="M16.75 13.96c.25.42.42.88.5 1.38-.17.08-.34.17-.5.25-.5.25-1.17.58-1.84.5-1-.08-1.58-.5-2.42-1.25s-1.42-1.75-1.5-2.5c-.08-.75.33-1.25.5-1.5.17-.17.33-.33.5-.5.5-.42 1-.83 1.38-.5.33.25.67.5.92.75.25.33.42.67.25.92-.17.33-.42.58-.67.75-.17.17-.25.33-.08.58.25.5.58 1.08 1.08 1.58.5.5 1.08.83 1.58 1.08.25.17.42.08.58-.08.17-.25.42-.5.75-.67.25-.17.58-.08.92.25.25.25.5.58.75.92zM12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path></svg>
+                                        <span>Chat on WhatsApp</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mt-8 text-accent-brown text-left space-y-4">
+                                <div>
+                                    <h4 class="text-lg font-bold font-serif text-text-brown">Kolavelloor Branch</h4>
+                                    <p>1st Floor, Chess Towers, Main Road, Kolavelloor, Kerala, 670692</p>
+                                </div>
+                                 <div>
+                                    <h4 class="text-lg font-bold font-serif text-text-brown">Thalassery Branch</h4>
+                                    <p>2nd Floor, Grandmaster Plaza, Near Bus Stand, Thalassery, Kerala, 670101</p>
+                                </div>
+                                <p><strong>Email:</strong> contact@gcachess.com</p>
+                            </div>
+                        </div>
+
+                        <div class="card-bg rounded-lg p-4 shadow-lg">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62635.88836526105!2d75.52226214533036!3d11.668856149999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba3d75c1c828949%3A0x6b4f71a3543666d6!2sKolavelloor%2C%20Kerala%20670692%2C%20India!5e0!3m2!1sen!2sus!4v1620831342687!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer class="bg-text-brown border-t border-accent-brown">
@@ -105,6 +186,12 @@
             </div>
         </footer>
     </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/911234567890" target="_blank" class="floating-whatsapp">
+        <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="WhatsApp icon"><path d="M16.75 13.96c.25.42.42.88.5 1.38-.17.08-.34.17-.5.25-.5.25-1.17.58-1.84.5-1-.08-1.58-.5-2.42-1.25s-1.42-1.75-1.5-2.5c-.08-.75.33-1.25.5-1.5.17-.17.33-.33.5-.5.5-.42 1-.83 1.38-.5.33.25.67.5.92.75.25.33.42.67.25.92-.17.33-.42.58-.67.75-.17.17-.25.33-.08.58.25.5.58 1.08 1.08 1.58.5.5 1.08.83 1.58 1.08.25.17.42.08.58-.08.17-.25.42-.5.75-.67.25-.17.58-.08.92.25.25.25.5.58.75.92zM12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path></svg>
+    </a>
+
     <script src="./script.js"></script>
 </body>
 </html>

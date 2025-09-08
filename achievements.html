@@ -14,7 +14,20 @@
 
     <!-- PRELOADER START -->
     <div class="preloader">
-        <div class="loader-icon">♟</div>
+        <div class="preloader-board">
+            <div class="row-1 flex">
+                <div class="preloader-square"><div class="preloader-piece piece-rook">♖</div></div>
+                <div class="preloader-square"><div class="preloader-piece piece-knight">♘</div></div>
+                <div class="preloader-square"><div class="preloader-piece piece-bishop">♗</div></div>
+                <div class="preloader-square"><div class="preloader-piece piece-queen">♕</div></div>
+            </div>
+            <div class="row-2 flex">
+                <div class="preloader-square"><div class="preloader-piece piece-pawn">♙</div></div>
+                <div class="preloader-square"><div class="preloader-piece piece-pawn">♙</div></div>
+                <div class="preloader-square"><div class="preloader-piece piece-pawn">♙</div></div>
+                <div class="preloader-square"><div class="preloader-piece piece-pawn">♙</div></div>
+            </div>
+        </div>
     </div>
     <!-- PRELOADER END -->
 
@@ -24,11 +37,9 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-20">
                     <a href="index.html" class="flex items-center space-x-4">
-                        <!-- Logo -->
                         <img src="images/logo.png" alt="INDO-US Chess Academy Logo" class="logo-img">
                         <span class="text-xl font-semibold font-serif tracking-wide">INDO-US CHESS ACADEMY</span>
                     </a>
-                    <!-- Desktop Navigation -->
                     <nav class="hidden md:flex flex-grow justify-center space-x-8">
                         <a href="index.html" class="nav-link">Home</a>
                         <a href="gallery.html" class="nav-link">Gallery</a>
@@ -37,15 +48,13 @@
                         <a href="lecturers.html" class="nav-link">Lecturers</a>
                         <a href="guests.html" class="nav-link">Guest Lecturers</a>
                         <a href="camps.html" class="nav-link">Camps</a>
-                        <a href="contact.html" class="nav-link">Contact</a>
+                        <a href="index.html#contact" class="nav-link">Contact</a>
                     </nav>
-                    <!-- Mobile Menu Button -->
                     <div class="md:hidden">
                         <button id="mobile-menu-button" class="focus:outline-none"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg></button>
                     </div>
                 </div>
             </div>
-            <!-- Mobile Menu -->
             <div id="mobile-menu" class="md:hidden hidden bg-bg-cream">
                 <a href="index.html" class="block py-3 px-4 text-sm">Home</a>
                 <a href="gallery.html" class="block py-3 px-4 text-sm">Gallery</a>
@@ -54,7 +63,7 @@
                 <a href="lecturers.html" class="block py-3 px-4 text-sm">Lecturers</a>
                 <a href="guests.html" class="block py-3 px-4 text-sm">Guest Lecturers</a>
                 <a href="camps.html" class="block py-3 px-4 text-sm">Camps</a>
-                <a href="contact.html" class="block py-3 px-4 text-sm">Contact</a>
+                <a href="index.html#contact" class="block py-3 px-4 text-sm">Contact</a>
             </div>
         </header>
 
@@ -88,6 +97,12 @@
             </div>
         </footer>
     </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/911234567890" target="_blank" class="floating-whatsapp">
+        <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="WhatsApp icon"><path d="M16.75 13.96c.25.42.42.88.5 1.38-.17.08-.34.17-.5.25-.5.25-1.17.58-1.84.5-1-.08-1.58-.5-2.42-1.25s-1.42-1.75-1.5-2.5c-.08-.75.33-1.25.5-1.5.17-.17.33-.33.5-.5.5-.42 1-.83 1.38-.5.33.25.67.5.92.75.25.33.42.67.25.92-.17.33-.42.58-.67.75-.17.17-.25.33-.08.58.25.5.58 1.08 1.08 1.58.5.5 1.08.83 1.58 1.08.25.17.42.08.58-.08.17-.25.42-.5.75-.67.25-.17.58-.08.92.25.25.25.5.58.75.92zM12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path></svg>
+    </a>
+
     <script src="./script.js"></script>
 </body>
 </html>

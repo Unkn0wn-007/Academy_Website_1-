@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-cream);
-    color: var(--text-brown);
+    background-color: var(--bg-cream); /* Cream Background */
+    color: var(--text-brown); /* Dark Brown Text */
 }
 
 .font-serif {
@@ -28,7 +28,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--text-brown);
+    background-color: var(--text-brown); /* Dark brown accent for underline */
     transition: width 0.3s ease;
 }
 
@@ -37,22 +37,27 @@ body {
     width: 100%;
 }
 
+.section-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem; /* 12px */
+}
+
+/* Card and Header background with transparency */
 .card-bg {
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(74, 46, 42, 0.1);
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white for a frosted look */
+    border: 1px solid rgba(74, 46, 42, 0.1); /* Subtle brown border */
 }
 
 .header-bg {
-    background-color: rgba(245, 239, 230, 0.8);
+    background-color: rgba(245, 239, 230, 0.8); /* Semi-transparent cream */
     backdrop-filter: blur(8px);
 }
 
-/* --- HERO SECTION STYLES (FIXES VISIBILITY & BUTTONS) --- */
+/* Hero Section Styles */
 .hero-section {
-    background-image: url('https://images.unsplash.com/photo-1580541832626-2a7131ee809f?q=80&w=2070&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
     position: relative;
+    background: url('https://images.unsplash.com/photo-1580541832626-2a7131ee809f?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
     color: white;
 }
 .hero-section::before {
@@ -62,7 +67,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
     z-index: 1;
 }
 .hero-content {
@@ -70,12 +75,12 @@ body {
     z-index: 2;
 }
 
-/* FIX: This adds a shadow to make the text visible */
+/* Hero Section Text Shadow for visibility */
 .hero-content h1, .hero-content p {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-/* FIX: These styles make the buttons interactive */
+/* Interactive Button Styles */
 .hero-button {
     transition: all 0.3s ease;
     border: 2px solid transparent;
@@ -100,27 +105,18 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-/* --- END OF HERO SECTION FIXES --- */
 
 /* Logo Styling */
 .logo-img {
     height: 3.5rem; /* 56px */
-    width: 3.5rem; /* 56px */
-    border-radius: 50%;
+    width: 3.5rem;  /* 56px */
+    border-radius: 9999px; /* Full circle */
     object-fit: cover;
+    background-color: white; /* Fallback color */
     border: 2px solid var(--text-brown);
 }
 
-/* General Page Animation */
-.animate-fadeIn {
-    animation: fadeIn 0.6s ease-in-out;
-}
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Preloader Styles */
+/* --- PRELOADER STYLES --- */
 .preloader {
     position: fixed;
     top: 0;
@@ -132,19 +128,107 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+    /* Delay hiding the preloader until the new animation finishes */
+    transition: opacity 0.5s ease 2s, visibility 0.5s ease 2s;
 }
+
 .preloader.hidden {
     opacity: 0;
     visibility: hidden;
 }
-.loader-icon {
-    font-size: 4rem;
-    color: var(--text-brown);
-    animation: pulse 1.5s infinite ease-in-out;
+
+.preloader-board {
+    display: grid;
+    /* A representative 4x2 section of the board */
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(2, 50px);
+    border: 3px solid var(--text-brown);
 }
-@keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.2); opacity: 0.7; }
+
+.preloader-square {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Animation to make the squares appear */
+    opacity: 0;
+    animation: fadeInSquare 0.5s forwards;
+}
+
+/* Creates the checkerboard pattern */
+.preloader-board .row-1 .preloader-square:nth-child(odd),
+.preloader-board .row-2 .preloader-square:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.preloader-board .row-1 .preloader-square:nth-child(even),
+.preloader-board .row-2 .preloader-square:nth-child(odd) {
+    background-color: var(--accent-brown);
+}
+
+/* Staggered animation for the squares to "draw" the board */
+.preloader-square:nth-child(1) { animation-delay: 0.1s; }
+.preloader-square:nth-child(2) { animation-delay: 0.2s; }
+.preloader-square:nth-child(3) { animation-delay: 0.3s; }
+.preloader-square:nth-child(4) { animation-delay: 0.4s; }
+.preloader-square:nth-child(5) { animation-delay: 0.5s; }
+.preloader-square:nth-child(6) { animation-delay: 0.6s; }
+.preloader-square:nth-child(7) { animation-delay: 0.7s; }
+.preloader-square:nth-child(8) { animation-delay: 0.8s; }
+
+.preloader-piece {
+    font-size: 2.8rem; /* 45px */
+    color: var(--text-brown);
+    opacity: 0;
+    transform: translateY(-20px);
+    /* Animation to make the pieces "drop" onto the board */
+    animation: placePiece 0.4s forwards;
+}
+
+/* Staggered animation for the pieces to "set up" the board */
+.piece-pawn { animation-delay: 1s; }
+.piece-rook { animation-delay: 1.4s; }
+.piece-knight { animation-delay: 1.5s; }
+.piece-bishop { animation-delay: 1.6s; }
+.piece-queen { animation-delay: 1.7s; }
+
+@keyframes fadeInSquare {
+    to { opacity: 1; }
+}
+
+@keyframes placePiece {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* --- END OF PRELOADER STYLES --- */
+
+/* --- Floating WhatsApp Button --- */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 2rem; /* 32px */
+    right: 2rem; /* 32px */
+    z-index: 1000;
+    background-color: #25D366;
+    color: white;
+    width: 4rem; /* 64px */
+    height: 4rem; /* 64px */
+    border-radius: 9999px; /* Full circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.floating-whatsapp svg {
+    width: 2rem; /* 32px */
+    height: 2rem; /* 32px */
 }
 
